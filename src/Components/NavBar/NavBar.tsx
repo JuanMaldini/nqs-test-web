@@ -12,7 +12,7 @@ const NavBar = () => {
           alt="NQS Test logo"
           className="app-navbar__logo"
         />
-        <span className="app-navbar__title">NQS Test - Juan Maldini</span>
+        {/* <span className="app-navbar__title">NQS Test - Juan Maldini</span> */}
       </div>
     </nav>
   );
