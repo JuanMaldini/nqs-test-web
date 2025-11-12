@@ -1,3 +1,4 @@
+import BottomMenu from "../../../Components/Source Components/BottomMenu/BottomMenu";
 import "./Interactive.css";
 
 const Interactive = () => {
@@ -9,6 +10,7 @@ const Interactive = () => {
         loading="lazy"
         className="interactive__frame"
       /> */}
+      <BottomMenu />
     </section>
   );
 };
