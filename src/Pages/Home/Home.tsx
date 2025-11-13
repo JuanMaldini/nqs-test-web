@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../../../Components/Button/Button";
+import Button from "../../Components/Button/Button";
 import "./Home.css";
 
 const Home = () => {

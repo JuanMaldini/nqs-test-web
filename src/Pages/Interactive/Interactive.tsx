@@ -1,7 +1,7 @@
 import { useState } from "react";
-import BottomMenu from "../../../Components/Source Components/BottomMenu/BottomMenu";
-import Slider from "../../../Components/Source Components/Slider/Slider";
-import { timeRange } from "../../../Components/Source Components/Slider/data";
+import BottomMenu from "../../Components/Source Components/BottomMenu/BottomMenu";
+import Slider from "../../Components/Source Components/Slider/Slider";
+import { timeRange } from "../../Components/Source Components/Slider/data";
 import "./Interactive.css";
 
 const Interactive = () => {

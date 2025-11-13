@@ -1,6 +1,6 @@
 import Body from "./Components/Body/Body";
 import NavBar from "./Components/NavBar/NavBar";
-import AppRoutes from "./Souls/Routes/routes";
+import AppRoutes from "./Routes/routes";
 
 const App = () => {
   return (
