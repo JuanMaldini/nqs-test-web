@@ -7,8 +7,12 @@
   color: #e2e8f0;
   font-size: 0.95rem;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: transform 120ms ease, background-color 120ms ease;
+  white-space: nowrap;
 }
 
 .trigger-button:hover {

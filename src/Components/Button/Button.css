@@ -1,7 +1,7 @@
-:root{
-    --colorAccent: #F59E0B;
-    --colorAccentFocus: #e6950b;
-    --colorAccentHover: #cf870a;
+:root {
+  --colorAccent: #f59e0b;
+  --colorAccentFocus: #e6950b;
+  --colorAccentHover: #cf870a;
 }
 
 .app-button {
@@ -15,8 +15,8 @@
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: all  120ms ease-in-out;
-
+  transition: all 120ms ease-in-out;
+  white-space: nowrap;
 }
 
 .app-button:focus {

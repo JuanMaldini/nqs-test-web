@@ -6,6 +6,17 @@
   overflow: hidden;
 }
 
+.interactive__top-panel {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
 .interactive__frame {
   flex: 1;
   border: none;

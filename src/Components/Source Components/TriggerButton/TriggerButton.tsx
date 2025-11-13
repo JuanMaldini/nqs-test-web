@@ -1,16 +1,17 @@
-import { type ButtonHTMLAttributes } from "react";
 import "./TriggerButton.css";
 
-type TriggerButtonProps = {
+interface TriggerButtonProps {
   label: string;
   onTrigger?: () => void;
-} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children" | "onClick">;
+  className?: string;
+  disabled?: boolean;
+}
 
 const TriggerButton = ({
   label,
   onTrigger,
   className = "",
-  ...props
+  disabled,
 }: TriggerButtonProps) => {
   const classes = ["trigger-button", className].filter(Boolean).join(" ");
 
@@ -23,7 +24,12 @@ const TriggerButton = ({
   };
 
   return (
-    <button className={classes} type="button" {...props} onClick={handleClick}>
+    <button
+      className={classes}
+      type="button"
+      disabled={disabled}
+      onClick={handleClick}
+    >
       {label}
     </button>
   );

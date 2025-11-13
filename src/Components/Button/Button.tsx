@@ -1,21 +1,23 @@
-import { type ButtonHTMLAttributes } from 'react'
-import './Button.css'
+import "./Button.css";
 
-type ButtonProps = {
-  label: string
-} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'>
+interface ButtonProps {
+  label: string;
+  className?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+}
 
-const Button = ({ label, className = '', ...buttonProps }: ButtonProps) => {
-  const classes = ['app-button']
+const Button = ({ label, className = "", onClick, disabled }: ButtonProps) => {
+  const classes = ["app-button"];
   if (className) {
-    classes.push(className)
+    classes.push(className);
   }
 
   return (
-    <button className={classes.join(' ')} {...buttonProps}>
+    <button className={classes.join(" ")} onClick={onClick} disabled={disabled}>
       {label}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
