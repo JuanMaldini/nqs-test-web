@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { ArcwareInit } from "@arcware-cloud/pixelstreaming-websdk";
-import { sendUE } from "./ps-functions";
 import { registerScreenshotApplication } from "./screenshot";
 import "./ArcwarePlayer.css";
 
@@ -59,7 +58,6 @@ const ArcwarePlayer = () => {
         Application.destroy?.();
       };
     } catch (error) {
-      sendUE({ arcwareError: String(error) });
     }
   }, []);
 
