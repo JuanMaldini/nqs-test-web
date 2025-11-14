@@ -5,7 +5,7 @@ import {
   timeRangeMinutes,
   minutesToHourFloatString,
 } from "../Slider/data";
-import { emitSignalDescriptor } from "../PixelStreaming/EmitSignalDescriptor";
+import { sendUE } from "../PixelStreaming/ps-functions";
 import { useSliderContext } from "../Slider/SliderContext";
 import "./NavBar.css";
 
@@ -18,18 +18,16 @@ const NavBar = () => {
 
   const handleSliderChange = (value: number) => {
     setSliderValue(value);
-    emitSignalDescriptor(minutesToHourFloatString(value));
+    sendUE({
+      solarTime: minutesToHourFloatString(value),
+    });
   };
 
   return (
     <nav className="app-navbar">
       <div className="app-navbar__brand" onClick={() => navigate("/")}>
-        <img
-          src="/icons/Logo.svg"
-          alt="NQS Test logo"
-          className="app-navbar__logo"
-        />
-        <span className="app-navbar__title">Juan Maldini</span>
+        {/* <img src="/icons/Logo.svg"alt="NQS Test logo"className="app-navbar__logo"/> */}
+        {/* <span className="app-navbar__title">Juan Maldini</span> */}
       </div>
       {isInteractive ? (
         <div className="app-navbar__center">

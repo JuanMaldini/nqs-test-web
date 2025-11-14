@@ -1,7 +1,7 @@
-import { emitSignalDescriptor } from "../PixelStreaming/EmitSignalDescriptor";
+import { sendUE } from "../PixelStreaming/ps-functions";
 
 const createTrigger = (descriptor: string) => () =>
-  emitSignalDescriptor(descriptor);
+  sendUE({ [descriptor]: "" });
 
 export type MenuAction = {
   label: string;

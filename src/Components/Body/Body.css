@@ -3,12 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
   height: calc(100vh - 4rem);
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #111827;
+  background-color: var(--color-bg-surface);
 }
 
 .app-body > * {

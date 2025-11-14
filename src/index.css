@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "./styles/tokens.css";
 
 * {
   box-sizing: border-box;
@@ -15,9 +16,9 @@ body,
 
 body {
   font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0f172a;
+  background-color: var(--color-bg-base);
   overflow: hidden;
-  color: #e2e8f0;
+  color: var(--color-text-primary);
 }
 
 .app-shell {
@@ -25,7 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #0f172a;
+  background-color: var(--color-bg-base);
 }
 
 .font-heading {

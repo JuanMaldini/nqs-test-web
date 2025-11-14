@@ -3,8 +3,8 @@
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 999px;
-  background-color: #1f2937;
-  color: #e2e8f0;
+  background-color: var(--color-button-bg);
+  color: var(--color-text-primary);
   font-size: 0.95rem;
   font-weight: 500;
   display: inline-flex;
@@ -21,17 +21,17 @@
 
 @media (hover: hover) and (pointer: fine) {
   .trigger-button:hover {
-    background-color: #2563eb;
+    background-color: var(--color-accent);
   }
 }
 
 .trigger-button:focus {
   outline: none;
-  background-color: #1f2937;
+  background-color: var(--color-button-bg);
 }
 
 .trigger-button:focus-visible {
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.7);
+  box-shadow: 0 0 0 2px var(--color-accent);
 }
 
 .trigger-button:focus:not(:focus-visible) {

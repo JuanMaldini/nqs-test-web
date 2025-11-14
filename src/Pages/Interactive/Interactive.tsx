@@ -1,6 +1,7 @@
 import BottomMenu from "../../Components/BottomMenu/BottomMenu";
 import { minutesToHourFloatString } from "../../Components/Slider/data";
 import { useSliderContext } from "../../Components/Slider/SliderContext";
+import ArcwarePlayer from "../../Components/PixelStreaming/ArcwarePlayer";
 import "./Interactive.css";
 
 const Interactive = () => {
@@ -15,12 +16,9 @@ const Interactive = () => {
           </span>
         </div>
       </div>
-      {/* <iframe
-        src="https://example.com"
-        title="Interactive content"
-        loading="lazy"
-        className="interactive__frame"
-      /> */}
+      <div className="interactive__player-container">
+        <ArcwarePlayer />
+      </div>
       <BottomMenu />
     </section>
   );

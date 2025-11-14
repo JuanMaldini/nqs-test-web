@@ -30,7 +30,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #64748b;
+  color: var(--color-text-muted);
   margin: 0;
   padding: 0;
 }
@@ -45,15 +45,15 @@
 .home__link {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #94a3b8;
+  color: var(--color-text-secondary);
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: filter 120ms ease, color 120ms ease;
 }
 
 .home__link:hover {
-  color: #e2e8f0;
-  filter: drop-shadow(0 0 1px #ffffff);
+  color: var(--color-text-primary);
+  filter: drop-shadow(0 0 1px var(--color-white));
 }
 
 .home__link-button {
@@ -64,6 +64,6 @@
 }
 
 .home__link-button:focus-visible {
-  outline: 2px solid #94a3b8;
+  outline: 2px solid var(--color-text-secondary);
   outline-offset: 4px;
 }

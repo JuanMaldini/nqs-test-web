@@ -1,0 +1,41 @@
+.screenshot-button {
+}
+
+.screenshot-button__trigger {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-subtle);
+  background-color: var(--color-button-bg);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+.screenshot-button__trigger:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .screenshot-button__trigger:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background-color: var(--color-accent);
+  }
+}
+
+.screenshot-button__preview {
+  width: 3.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.screenshot-button__error {
+  font-size: 0.75rem;
+  color: var(--color-accent);
+}

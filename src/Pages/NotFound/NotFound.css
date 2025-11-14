@@ -11,7 +11,7 @@
 .not-found__text {
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
-  color: #e0e0e0;
+  color: var(--color-text-soft);
   text-align: center;
 }
 

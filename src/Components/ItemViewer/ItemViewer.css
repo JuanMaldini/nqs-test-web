@@ -12,5 +12,5 @@
 }
 
 .item-viewer__video {
-  background: #000;
+  background: var(--color-black);
 }
