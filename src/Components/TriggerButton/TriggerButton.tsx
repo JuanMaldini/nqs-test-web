@@ -16,11 +16,7 @@ const TriggerButton = ({
   const classes = ["trigger-button", className].filter(Boolean).join(" ");
 
   const handleClick = () => {
-    if (onTrigger) {
-      onTrigger();
-    } else {
-      console.log("Hello World");
-    }
+    onTrigger?.();
   };
 
   return (

@@ -1,22 +1,18 @@
-import { useState } from "react";
-import BottomMenu from "../../Components/Source Components/BottomMenu/BottomMenu";
-import Slider from "../../Components/Source Components/Slider/Slider";
-import { timeRange } from "../../Components/Source Components/Slider/data";
+import BottomMenu from "../../Components/BottomMenu/BottomMenu";
+import { minutesToHourFloatString } from "../../Components/Slider/data";
+import { useSliderContext } from "../../Components/Slider/SliderContext";
 import "./Interactive.css";
 
 const Interactive = () => {
-  const [sliderValue, setSliderValue] = useState(0.5);
+  const { value: sliderValue } = useSliderContext();
 
   return (
     <section className="interactive">
       <div className="interactive__top-panel">
         <div className="interactive__label-row">
-          <span className="interactive__title">Daytime</span>
-        </div>
-        <div className="interactive__slider-row">
-          <span className="interactive__time-label">{timeRange.start}</span>
-          <Slider value={sliderValue} onChange={setSliderValue} />
-          <span className="interactive__time-label">{timeRange.end}</span>
+          <span className="interactive__title">
+            {minutesToHourFloatString(sliderValue)}
+          </span>
         </div>
       </div>
       {/* <iframe
