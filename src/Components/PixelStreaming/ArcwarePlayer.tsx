@@ -59,7 +59,6 @@ const ArcwarePlayer = () => {
         Application.destroy?.();
       };
     } catch (error) {
-      console.warn("ArcwarePlayer initialization failed", error);
       sendUE({ arcwareError: String(error) });
     }
   }, []);
