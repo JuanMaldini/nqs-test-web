@@ -18,6 +18,36 @@ const defaultUiSettings = {
   connectionStrengthIcon: false,
 };
 
+const isArcwareConfigLogPayload = (value: unknown): value is Record<string, unknown> => {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const config = value as Record<string, unknown>;
+  return (
+    "initialSettings" in config &&
+    "settings" in config &&
+    "useUrlParams" in config
+  );
+};
+
+const runWithoutArcwareInitLog = <T,>(callback: () => T): T => {
+  const originalLog = console.log;
+  console.log = (...args: Parameters<typeof console.log>) => {
+    if (args.length === 1 && isArcwareConfigLogPayload(args[0])) {
+      return;
+    }
+
+    originalLog(...args);
+  };
+
+  try {
+    return callback();
+  } finally {
+    console.log = originalLog;
+  }
+};
+
 const ArcwarePlayer = () => {
   const videoContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -30,12 +60,14 @@ const ArcwarePlayer = () => {
     const projectId = import.meta.env.VITE_ARCWARE_PROJECT_ID;
 
     try {
-      const { Application } = ArcwareInit(
-        { shareId, projectId },
-        {
-          initialSettings: defaultInitialSettings,
-          settings: defaultUiSettings,
-        }
+      const { Application } = runWithoutArcwareInitLog(() =>
+        ArcwareInit(
+          { shareId, projectId },
+          {
+            initialSettings: defaultInitialSettings,
+            settings: defaultUiSettings,
+          }
+        )
       );
 
       const root = Application.rootElement;

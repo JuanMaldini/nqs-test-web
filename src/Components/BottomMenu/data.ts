@@ -1,11 +1,12 @@
 import { sendUE } from "../PixelStreaming/ps-functions";
 
-const createTrigger = (descriptor: string) => () =>
-  sendUE({ [descriptor]: "" });
+const createTrigger = (descriptor: string, payload: string) => () =>
+  sendUE({ [descriptor]: payload });
 
 export type MenuAction = {
   label: string;
   descriptor: string;
+  payload: string;
   onTrigger?: () => void;
 };
 
@@ -18,21 +19,24 @@ type MenuDefinition = Omit<MenuAction, "onTrigger">;
 const withTriggers = <T extends MenuDefinition>(items: T[]): MenuAction[] =>
   items.map((item) => ({
     ...item,
-    onTrigger: createTrigger(item.descriptor),
+    onTrigger: createTrigger(item.descriptor, item.payload),
   }));
 
 const dropdownDefinitions: MenuDefinition[] = [
   {
     label: "Comedor",
-    descriptor: "LOCATION-COMEDOR",
+    descriptor: "location",
+    payload: "comedor",
   },
   {
     label: "Sala de estar",
-    descriptor: "LOCATION-SALADEESTAR",
+    descriptor: "location",
+    payload: "saladeestar",
   },
   {
     label: "Dormitorio",
-    descriptor: "LOCATION-DORMITORIO",
+    descriptor: "location",
+    payload: "dormitorio",
   },
 ];
 
@@ -41,11 +45,13 @@ export const dropdownItems: MenuAction[] = withTriggers(dropdownDefinitions);
 const buttonDefinitions: MenuDefinition[] = [
   {
     label: "Tour",
-    descriptor: "ACTION-TOUR",
+    descriptor: "action",
+    payload: "tour",
   },
   {
     label: "Movie",
-    descriptor: "ACTION-MOVIE",
+    descriptor: "action",
+    payload: "movie",
   },
 ];
 
@@ -54,6 +60,7 @@ export const bottomMenuButtons: MenuButton[] = [
   {
     label: "Locaciones",
     descriptor: "QUE-HACES-AQUI",
+    payload: "QUE-HACES-AQUI",
     menuItems: dropdownItems,
   },
 ];
