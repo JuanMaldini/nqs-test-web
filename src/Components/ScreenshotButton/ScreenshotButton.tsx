@@ -1,19 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
-import { captureScreenshotBlob } from "../PixelStreaming/screenshot";
+import { triggerScreenshot } from "../PixelStreaming/screenshot";
 import "./ScreenshotButton.css";
 
 const ScreenshotButton = () => {
   const [isCapturing, setIsCapturing] = useState(false);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (previewUrl) {
-        URL.revokeObjectURL(previewUrl);
-      }
-    };
-  }, [previewUrl]);
 
   const handleCapture = useCallback(async () => {
     if (isCapturing) {
@@ -23,13 +14,7 @@ const ScreenshotButton = () => {
     setIsCapturing(true);
 
     try {
-      const { blob } = await captureScreenshotBlob();
-      setPreviewUrl((previous) => {
-        if (previous) {
-          URL.revokeObjectURL(previous);
-        }
-        return URL.createObjectURL(blob);
-      });
+      await triggerScreenshot();
     } catch (error) {
       console.warn(
         "Screenshot capture failed",
@@ -51,13 +36,6 @@ const ScreenshotButton = () => {
       >
         <MdOutlineAddPhotoAlternate size={20} />
       </button>
-      {previewUrl ? (
-        <img
-          src={previewUrl}
-          alt="Última captura"
-          className="screenshot-button__preview"
-        />
-      ) : null}
     </div>
   );
 };

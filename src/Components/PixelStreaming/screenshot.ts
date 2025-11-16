@@ -79,7 +79,7 @@ export const registerScreenshotApplication = (app: ArcwareApplication) => {
 
 export const triggerScreenshot = () => {
   try {
-    sendUE({ CreateScreenshot: "" });
+    sendUE({ CreateScreenshot: "CreateScreenshot" });
   } catch (error) {
     console.warn("triggerScreenshot failed", error);
   }
