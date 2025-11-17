@@ -22,7 +22,7 @@ const downloadScreenshot = (file: ScreenshotFile) => {
     const anchor = document.createElement("a");
     anchor.href = url;
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-    anchor.download = `render_${timestamp}.png`;
+    anchor.download = `SHOOT_JM_${timestamp}.png`;
     document.body.appendChild(anchor);
     anchor.click();
     document.body.removeChild(anchor);

@@ -2,38 +2,35 @@
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   padding: 2rem 0;
-  animation: slide-in-up 500ms ease;
 }
 
-.gallery__header {
-  text-align: center;
-  max-width: 640px;
+.gallery__notes {
+  width: min(1100px, 100%);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-.gallery__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  font-size: 0.75rem;
-  color: var(--color-text-secondary);
-  margin: 0;
+.gallery__note {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--color-bg-surface, rgba(15, 23, 42, 0.25));
 }
 
-.gallery__title {
-  font-size: clamp(1.7rem, 3vw, 2.8rem);
+.gallery__note h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
   color: var(--color-text-primary);
-  margin: 0;
 }
 
-.gallery__subtitle {
-  color: var(--color-text-secondary);
+.gallery__note p {
   margin: 0;
-  line-height: 1.6;
+  color: var(--color-text-secondary);
+  line-height: 1.45;
 }
 
 .gallery__grid {
