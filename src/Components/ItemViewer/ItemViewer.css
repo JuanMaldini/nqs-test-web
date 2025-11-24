@@ -5,12 +5,15 @@
 .item-viewer__image,
 .item-viewer__video {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
   display: block;
   border: none;
 }
 
+.item-viewer__image {
+  height: auto;
+}
+
 .item-viewer__video {
   background: var(--color-black);
+  object-fit: cover;
 }

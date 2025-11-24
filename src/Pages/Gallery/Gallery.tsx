@@ -3,6 +3,22 @@ import "./Gallery.css";
 import { galleryItems, galleryNotes } from "./data";
 
 const Gallery = () => {
+  const cloudfrontDomain =
+    import.meta.env.VITE_CLOUDFRONT?.replace(/\/$/, "") ?? "";
+  const cloudfrontPrefix = cloudfrontDomain
+    ? cloudfrontDomain.startsWith("http")
+      ? cloudfrontDomain
+      : `https://${cloudfrontDomain}`
+    : "";
+
+  const resolvedGalleryItems = galleryItems.map((item) => {
+    if (!cloudfrontPrefix || /^https?:\/\//i.test(item)) {
+      return item;
+    }
+    const normalizedPath = item.replace(/^\/+/, "");
+    return `${cloudfrontPrefix}/${normalizedPath}`;
+  });
+
   return (
     <section className="gallery">
       <div className="gallery__notes">
@@ -15,7 +31,7 @@ const Gallery = () => {
       </div>
 
       <div className="gallery__grid">
-        {galleryItems.map((mediaUrl, index) => (
+        {resolvedGalleryItems.map((mediaUrl, index) => (
           <ItemViewer key={`${mediaUrl}-${index}`} mediaUrl={mediaUrl} />
         ))}
       </div>

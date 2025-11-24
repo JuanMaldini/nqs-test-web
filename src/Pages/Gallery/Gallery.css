@@ -35,11 +35,8 @@
 
 .gallery__grid {
   display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(clamp(200px, 28vw, 360px), 1fr)
-  );
-  width: min(1120px, 100%);
+  gap: 1.75rem;
+  grid-template-columns: 1fr;
+  width: min(1400px, 100%);
   margin: 0 auto;
 }

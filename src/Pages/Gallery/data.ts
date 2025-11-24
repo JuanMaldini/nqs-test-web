@@ -5,38 +5,60 @@ export type GalleryNote = {
 
 export const galleryNotes: GalleryNote[] = [
   {
-    title: "Arcware Pixel Streaming",
-    description: "El web SDK manda textos a Unreal; con F12 podés ver cada uno que manda, en base a cada texto, se decide en la app que hacer.",
+    title: "Desarrollo Web (Frontend)",
+    description:
+      "Iniciado el jueves y terminado el viernes (2 jornadas de 4hs) más una actualización posterior (1h). Se utilizó React + Vite y el SDK de ArcWare priorizando la simplicidad y la comunicación de eventos hacia Unreal.",
   },
   {
-    title: "Project Cleaner + plugins NVIDIA",
-    description: "Uso Project Cleaner para borrar arhivos sin uso y el zip del repo trae los plugins de NVIDIA. Si el proyecto no compila, reemplazá la carpeta Plugins por ese paquete.",
+    title: "Unreal Engine & Programación",
+    description:
+      "Aprox. 12hs (4hs/3d). Sin dificultades en lógica, Blueprints o C++ gracias a experiencia previa. Se implementaron triggers desde la web y respuestas en el motor sin contratiempos.",
   },
   {
-    title: "Master Material",
-    description: "Reutilicé mi master material que mezcla hasta 5 materiales y agrega nieve con displacement o lluvia. Y se puede incorporar también Flakes o Clear Coat; el resto de blueprints y lógica se hizo desde 0.",
+    title: "Workflow 3ds Max & Datasmith",
+    description:
+      "Aprox. 8hs. Se mantuvo una prolijidad estricta en el renombrado y división por secciones para garantizar modularidad. Fundamental para evitar complicaciones de reimportación.",
   },
   {
-    title: "Web app",
-    description: "El frontend con React + Vite (páginas, control horario y galería) utilicé el tiempo de unas 8 horas aproximadamente para armar la web.",
+    title: "Blueprint de Minimap",
+    description:
+      "Sistema diseñado para filtrar qué renderizar (plano vs jugador) y superponer ambas imágenes en la UI. Actualmente deshabilitado por cuestiones de tiempo, pero la lógica funcional ya existe.",
+  },
+  {
+    title: "Integración C++ y Screenshot",
+    description:
+      "Se integró código C++ para habilitar la captura y descarga de imágenes desde la web. Se conservó el nombre original del template para mantener la estabilidad de las referencias del plugin de ArcWare.",
+  },
+  {
+    title: "Desafíos y Hardware",
+    description:
+      "El equipo rindió bien en programación, pero las mayores dificultades fueron térmicas (calentamiento y ventiladores) durante la edición de materiales complejos y cinemáticas, ralentizando esas etapas específicas.",
   },
   {
     title: "Cinematic Assembly Tools",
-    description: "Organizo los shots con Cinematic Assembly Tools y en la raíz de Unreal hay un production.json que inportándolo estable algunas reglas globales.",
+    description:
+      "Organización de shots con Cinematic Assembly Tools. En la raíz del proyecto se incluye un production.json que, al importarlo, establece reglas globales de forma estable.",
   },
   {
-    title: "Nombre del template",
-    description: "El template C++ de Arcware conserva su nombre original porque renombrarlo implica tocar unos nombres en Source; preferí mantener la estabilidad.",
+    title: "Master Material",
+    description:
+      "Reutilización de un material propio. Agilizó el proceso artístico, aunque su edición fue el punto de mayor carga para el hardware.",
   },
   {
-    title: "Ruta del screenshot",
-    description: "El botón web manda un texto desde la web, a travez de un SDK, llegando hasta la app, un blueprint  de c++ responde y envía la imagen al navegador para descargarla.",
+    title: "Project Cleaner & Plugins",
+    description:
+      "Uso de Project Cleaner para optimización final y gestión de plugins de NVIDIA incluidos en el repositorio, asegurando que el proyecto compile correctamente en cualquier entorno.",
+  },
+  {
+    title: "Limitaciones de Hardware",
+    description:
+      "Debido al hardware actual, el trabajo con ray tracing, cinemáticas y materiales de alto costo resulta exigente. Estas tareas generaron sobrecalentamiento y obligaron a realizar pausas frecuentes.",
   }
 ];
 
+
 export const galleryItems = [
-  "https://placehold.co/640x360/png?text=Concept+01",
-  "https://placehold.co/640x360/png?text=UI+02",
-  "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-  "https://placehold.co/640x360/png?text=Setup",
+  "LS_CAMERA_01_639.0000.png",  
+  "LS_CAMERA_02_735.0000.png",
+  "LS_CAMERA_03_705.0000.png",
 ] as const;
